@@ -37,3 +37,14 @@ if (number2>maxValue) {maxValue=number2;};
 if (number3>maxValue) {maxValue=number3;};
 Console.WriteLine("Наибольшим является значение "+maxValue);
 
+//Решение задачи №6
+
+Console.WriteLine();
+Console.WriteLine("Задача №6");
+int num = new Random().Next(1, 100);
+Console.WriteLine("N= "+num);
+
+if (num%2==0) {
+    Console.WriteLine("Число является чётным");
+}
+else Console.WriteLine("Число НЕ является чётным");
