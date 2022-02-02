@@ -8,17 +8,32 @@
 
 //Нужно прислать файл с кодом .cs или ссылку на репозиторий с решениями
 
+Console.Clear();
 //Решение задачи №2
-
+Console.WriteLine();
 Console.WriteLine("Задача №2");
 int numberA = new Random().Next(1, 100);
 int numberB = new Random().Next(1, 100);
 
 Console.WriteLine("A= "+numberA+"; B= "+numberB);
 if (numberA>numberB) {
-    Console.WriteLine("Большее - "+numberA+"; Меньшее - "+numberB);
+    Console.WriteLine("Большее = "+numberA+"; Меньшее = "+numberB);
 }
 else if (numberB>numberA) {
-    Console.WriteLine("Большее - "+numberB+"; Меньшее - "+numberA);
+    Console.WriteLine("Большее = "+numberB+"; Меньшее = "+numberA);
 }
 else Console.WriteLine("A=B="+numberA);
+Console.WriteLine();
+
+//Решение задачи №4
+
+Console.WriteLine("Задача №4");
+int number1 = new Random().Next(1, 100);
+int number2 = new Random().Next(1, 100);
+int number3 = new Random().Next(1, 100);
+Console.WriteLine("N1= "+number1+"; N2= "+number2+"; N3= "+number3);
+int maxValue = number1;
+if (number2>maxValue) {maxValue=number2;};
+if (number3>maxValue) {maxValue=number3;};
+Console.WriteLine("Наибольшим является значение "+maxValue);
+
