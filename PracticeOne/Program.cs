@@ -48,3 +48,22 @@ if (num%2==0) {
     Console.WriteLine("Число является чётным");
 }
 else Console.WriteLine("Число НЕ является чётным");
+
+//Решение задачи №8
+
+Console.WriteLine();
+Console.WriteLine("Задача №8");
+int numb = new Random().Next(1, 100);
+Console.WriteLine("N= "+numb);
+int index=1;
+Console.WriteLine("Четными числами от 1 до "+numb+" являются следующие числа:");
+
+while (index<numb) {
+    index++;
+    if (index%2==0) {
+        Console.Write(index+"; ");
+    }
+}
+if (index == 1) {
+    Console.WriteLine("Нет четных чисел в указанном диапозоне");
+}
