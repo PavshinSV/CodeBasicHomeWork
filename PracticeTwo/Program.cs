@@ -66,6 +66,11 @@ if (3>task14string.Length) {
 else {
     Console.WriteLine("Третья цифра (счёт слева) это "+task14string[2]);
 }
-
+Console.WriteLine();
 
 //Задача 16: Дано число обозначающее день недели. Выяснить является номер дня недели выходным
+Console.WriteLine("Задача 16: Дано число обозначающее день недели. Выяснить является номер дня недели выходным");
+
+string[] task16week = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+int task16day = new Random().Next(1,8);
+Console.WriteLine("The number of day is "+task16day+". Today is "+task16week[task16day-1]);
