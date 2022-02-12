@@ -8,6 +8,7 @@
 
  */
 Console.Clear();
+Console.WriteLine("Задача 18: Проверить истинность утверждения");
 Console.WriteLine();
 //Задача 18: Проверить истинность утверждения
 //¬(X ⋁ Y) = ¬X ⋀ ¬Y
@@ -29,3 +30,37 @@ for (int i=0; i < x.Length; i++) {
 }
 Console.WriteLine($"-----------------------------------------");
 Console.WriteLine();
+
+//Задача 20: Задать номер четверти, показать диапазоны для возможных координат
+Console.WriteLine($"Задача 20: Задать номер четверти, показать диапазоны для возможных координат");
+bool inputFail = true;
+int quadrant = new int{};
+while (inputFail) 
+{
+    Console.Write($"Введите номер четверти (квадранта), целое число от 1 до 4: ");
+    quadrant = int.Parse(Console.ReadLine());
+    if (quadrant>4 && 0>quadrant) 
+    {
+        Console.WriteLine("Input Error");
+    } else 
+        {
+            inputFail=false;
+        }
+
+}
+
+if (quadrant==1) 
+{
+    Console.WriteLine($"Диапозон возможных значений - х>0, у>0");
+} else if (quadrant==2) 
+        {
+            Console.WriteLine($"Диапозон возможных значений - х<0, у>0");
+} else if (quadrant==3) 
+        {
+            Console.WriteLine($"Диапозон возможных значений - х<0, у<0");
+} else if (quadrant==4) 
+        {
+            Console.WriteLine($"Диапозон возможных значений - х>0, у<0");
+}
+Console.WriteLine();
+
