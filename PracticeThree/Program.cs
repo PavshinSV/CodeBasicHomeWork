@@ -94,3 +94,15 @@ Console.WriteLine($"Расстояние между указанными точ�
 Console.WriteLine();
 
 //Задача 24: Найти кубы чисел от 1 до N
+Console.WriteLine("Задача 24: Найти кубы чисел от 1 до N");
+Console.WriteLine();
+int cubing (int n) {
+    return n*n*n;
+}
+int rnd = new Random().Next(1,100);
+Console.WriteLine($"N = {rnd}");
+for (int index = 1; index < rnd+1; index++) {
+    Console.WriteLine($"Число {index,5} возведенное в третью степень равно: {cubing(index),8}");
+}
+
+Console.WriteLine();
