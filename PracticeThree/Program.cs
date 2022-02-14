@@ -15,6 +15,7 @@ Console.WriteLine();
  
 bool[] x = new bool[] {true,false};
 bool[] y = new bool[] {true,false};
+bool trueFalse = true;
 
 Console.WriteLine($"-----------------------------------------");
 Console.WriteLine($"|   x   |   y   |!(X||Y)| !X&&!Y| Result|");
@@ -25,10 +26,12 @@ for (int i=0; i < x.Length; i++) {
     {
         bool firstExpression = !(x[i] || y[j]);
         bool secondExpression = !x[i] && !y[j];
+        if (firstExpression!=secondExpression) {trueFalse=false;}
         Console.WriteLine($"|{x[i],6} |{y[j],6} |{firstExpression,6} |{secondExpression,6} |{firstExpression==secondExpression,6} |");
     }                         
 }
 Console.WriteLine($"-----------------------------------------");
+Console.WriteLine($"Выражение {trueFalse}");
 Console.WriteLine();
 
 //Задача 20: Задать номер четверти, показать диапазоны для возможных координат
@@ -65,7 +68,7 @@ if (quadrant==1)
 Console.WriteLine();
 
 //Задача 22: Найти расстояние между точками в пространстве 2D/3D
-Console.WriteLine("Задача 22: Найти расстояние между точками в пространстве 2D/3D");
+Console.WriteLine("Задача 22: Найти расстояние между точками в пространстве 2D/3D (вслучае 3D введите Z=0)");
 Console.WriteLine();
 int[] coordinatesInput() 
 {
