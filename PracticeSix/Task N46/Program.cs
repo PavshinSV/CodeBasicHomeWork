@@ -43,17 +43,31 @@ void PrintArray2(int[,] arr)
     }
 }
 
-double[,] Scale(int[] arr, double k)
+void PrintArray3(double[,] arr)
+{
+    for (int j = 0; j < arr.GetLength(0); j++)
+    {
+        Console.Write($"N{j + 1} - [");
+        for (int i = 0; i < arr.GetLength(1); i++)
+        {
+            Console.Write($"{arr[j, i]}");
+            if (i != arr.GetLength(1) - 1) { Console.Write("; "); }
+        }
+        Console.WriteLine("]");
+    }
+}
+
+double[,] Scale(int[,] arr, double k)
 {
     double[,] swap = new double[arr.GetLength(0), arr.GetLength(1)];
     for (int i = 0; i < arr.GetLength(0); i++)
     {
         for (int j = 0; j < arr.GetLength(1); j++)
         {
-            swap[i, j] = arr * k;
-
+            swap[i, j] = arr[i,j] * k;
         }
     }
+    return swap;
 }
 
 int[,] GetCoordinates(string[] spool)
@@ -89,8 +103,10 @@ Console.WriteLine("Вы ввели следующие координаты");
 PrintArray2(arrayOfCoordinates);
 Console.WriteLine();
 
-Console.WriteLine("Введите коэфициент масштабирования:");
-double scale = int.Parse(Console.ReadLine());
+Console.WriteLine("Введите коэфициент масштабирования (вместо точки запятая):");
+double scale = double.Parse(Console.ReadLine());
 Console.WriteLine();
 
 double[,] scaledArray = Scale(arrayOfCoordinates, scale);
+Console.WriteLine("Полученные координаты после масштабирования");
+PrintArray3(scaledArray);
