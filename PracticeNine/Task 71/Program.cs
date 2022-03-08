@@ -2,3 +2,26 @@
 
 m = 2, n = 3 -> A(m,n) = 29 */
 
+Console.Clear();
+
+double AkkermanMethod(double m, double n)
+{
+    if (m == 0)
+    {
+        return n + 1;
+    }
+    if (m > 0 && n == 0)
+    {
+        return AkkermanMethod(m - 1, 1);
+    }
+    if (m > 0 && n > 0)
+    {
+        return AkkermanMethod(m - 1, AkkermanMethod(m, n - 1));
+    }
+    return -1;
+}
+
+double m = 3;
+double n = 2;
+
+Console.WriteLine(AkkermanMethod(m,n));
