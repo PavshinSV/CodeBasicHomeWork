@@ -24,4 +24,6 @@ double AkkermanMethod(double m, double n)
 double m = 3;
 double n = 2;
 
+Console.Write($"Для значений m = {m} и n = {n} результат функции Аккермана будет равен: ");
 Console.WriteLine(AkkermanMethod(m,n));
+Console.WriteLine();
