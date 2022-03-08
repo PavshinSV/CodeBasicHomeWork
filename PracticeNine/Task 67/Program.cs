@@ -2,17 +2,19 @@
 
 Console.Clear();
 
-void ShowNatural(int n) {
-    if (n==0) {
+void ShowNatural(int n)
+{
+    if (n == 0)
+    {
         return;
     }
     Console.Write($"{n} ");
-    ShowNatural(n-1);
+    ShowNatural(n - 1);
 }
 
 Console.WriteLine();
 
-int n=15;
+int n = 15;
 Console.WriteLine($"Для введенного числа N = {n} все натуральные числа представлены рядом:");
 ShowNatural(n);
 Console.WriteLine();
