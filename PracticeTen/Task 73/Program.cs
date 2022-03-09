@@ -17,4 +17,50 @@
 Группа 6: 32 48
  */
 
- 
+Console.Clear();
+
+void ShowQuantitysOfRange(string range, int count = 0)
+{
+    if (range.Length == 0) return;
+    count++;
+    string newString = string.Empty;
+    string[] rangeArray = range.Split(";", StringSplitOptions.RemoveEmptyEntries);
+    string[] quantityIteration = new string[rangeArray.Length];
+    for (int i = 1; i < quantityIteration.Length; i++)
+    {
+        quantityIteration[i] = "0";
+    }
+    quantityIteration[0] = rangeArray[0];
+
+    for (int i = 1; i < rangeArray.Length; i++)
+    {
+        bool mutualyNatural = true;
+
+        if (i == 1) { Console.Write($"Группа {count}: {rangeArray[0]}"); }
+        for (int j = 0; j < quantityIteration.Length; j++)
+        {
+            if (quantityIteration[j] != "0" && int.Parse(rangeArray[i]) % int.Parse(quantityIteration[j]) == 0)
+            {
+                mutualyNatural = false;
+            }
+        }
+        if (mutualyNatural)
+        {
+            Console.Write($", {rangeArray[i]}");
+            quantityIteration[i] = rangeArray[i];
+        }
+        else newString += $"{rangeArray[i]};";
+    }
+    Console.WriteLine();
+    if (newString.Length != 0) ShowQuantitysOfRange(newString, count);
+}
+
+int n = 50;
+string baseRange = string.Empty;
+
+for (int i = 0; i < n; i++)
+{
+    baseRange += $"{i + 1};";
+}
+
+ShowQuantitysOfRange(baseRange);
