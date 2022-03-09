@@ -37,7 +37,7 @@ void ShowQuantitysOfRange(string range, int count = 0)
         bool mutualyNatural = true;
 
         if (i == 1) { Console.Write($"Группа {count}: {rangeArray[0]}"); }
-        for (int j = 0; j < quantityIteration.Length; j++)
+        for (int j = 0; j < i; j++)
         {
             if (quantityIteration[j] != "0" && int.Parse(rangeArray[i]) % int.Parse(quantityIteration[j]) == 0)
             {
